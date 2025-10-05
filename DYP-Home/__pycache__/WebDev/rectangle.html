@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas practices</title>
+</head>
+<body>
+    <h1>hello world</h1>
+    <div>
+        <canvas id="c1" width="400" height="350" style="border: solid black;"></canvas>
+        <hr>
+        <canvas id="c2" width="500" height="350" style="border: solid black;"></canvas>
+        
+        <hr>
+        <canvas id="c3" width="500" height="350" style="border: solid black;"></canvas>
+    </div>
+    <script>
+        console.log("hello");
+        let canvas1 = document.getElementById("c1");
+        let ctx = canvas1.getContext("2d");
+
+        // location(start from) 220px from left, 10px from top, width, height
+        
+        ctx.fillStyle = "lightgreen";
+        ctx.fillRect(10, 10, 20, 20);
+        
+        ctx.fillStyle = "lightpink";
+        ctx.fillRect(120, 35, 20, 20);
+        
+        ctx.fillStyle = "darkblue";
+        ctx.fillRect(230, 120, 20, 20);
+        
+        ctx.fillStyle = "yellow";
+        ctx.fillRect(300, 205, 20, 20);
+
+
+        //for another canvas circle
+        let canvas2 = document.getElementById("c2");
+        let ctx2 = canvas2.getContext("2d");
+
+        // ctx.fillStyle = "red"
+        ctx2.beginPath();
+
+        //start(from left), end(from top), start angle, end angle(Math*PI for semi-circle), anticlockwise  
+        ctx2.arc(150, 140, 120, 0, 2*Math.PI, false )
+        ctx2.strokeStyle="red";
+        ctx2.stroke()
+
+        //drawing a line
+        ctx2.beginPath();
+        ctx2.strokeStyle = "voilet";
+        
+        //pointer at x=30(from left), y=140(from top)
+        ctx2.moveTo(30, 140);
+        
+        //draw till x=270(30 + diameter) y=140(from top)
+        ctx2.lineTo(270, 140);
+        
+        //pointer at x=150(30+radius from left) y=20(center140-radius)
+        ctx2.moveTo(150, 20);
+
+        //draw till x=150 y=(20 + 2*radius)
+        ctx2.strokeStyle="blue";
+        ctx2.lineTo(150, 260);
+        
+        ctx2.stroke();
+
+        //for semi-circle
+        let canvas3 = document.getElementById("c3");
+        let ctx3 = canvas3.getContext('2d');
+        let ctx4 = canvas3.getContext('2d');
+
+        //circle
+        
+        ctx3.beginPath();
+
+        //start(from left), end(from top), start angle, end angle(Math*PI for semi-circle), anticlockwise  
+        ctx3.arc(230, 170, 120, 0, 2*Math.PI, false );
+        ctx3.strokeStyle="black";
+        ctx3.stroke();
+
+        //semi-circle
+        ctx3.moveTo(170, 200);
+        ctx3.arc(230, 200, 60, 0, 1*Math.PI, false);
+        ctx3.stroke();
+
+        //eyes circle
+        ctx4.moveTo(200, 120);
+        ctx4.arc(180, 120, 20, 0, 2*Math.PI);
+        ctx4.stroke();
+
+        //eyes circle
+        ctx4.moveTo(300, 120);
+        ctx4.arc(280, 120, 20, 0, 2*Math.PI);
+        ctx4.stroke();
+    </script>
+</body>
+</html>
