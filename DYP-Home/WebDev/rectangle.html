@@ -9,11 +9,14 @@
     <h1>hello world</h1>
     <div>
         <canvas id="c1" width="400" height="350" style="border: solid black;"></canvas>
-        <hr>
+        <hr><hr><hr>
         <canvas id="c2" width="500" height="350" style="border: solid black;"></canvas>
         
-        <hr>
+        <hr><hr><hr>
         <canvas id="c3" width="500" height="350" style="border: solid black;"></canvas>
+        
+        <hr><hr><hr>
+        <canvas id="c4" width="500" height="350" style="border: solid black;"></canvas>
     </div>
     <script>
         console.log("hello");
@@ -39,12 +42,14 @@
         let canvas2 = document.getElementById("c2");
         let ctx2 = canvas2.getContext("2d");
 
-        // ctx.fillStyle = "red"
+        
         ctx2.beginPath();
 
         //start(from left), end(from top), start angle, end angle(Math*PI for semi-circle), anticlockwise  
         ctx2.arc(150, 140, 120, 0, 2*Math.PI, false )
+        ctx2.fillStyle = "lightgreen";
         ctx2.strokeStyle="red";
+        ctx2.fill();
         ctx2.stroke()
 
         //drawing a line
@@ -66,34 +71,86 @@
         
         ctx2.stroke();
 
-        //for semi-circle
+        //for smiley face
         let canvas3 = document.getElementById("c3");
         let ctx3 = canvas3.getContext('2d');
-        let ctx4 = canvas3.getContext('2d');
+        // let ctx4 = canvas3.getContext('2d');
 
         //circle
         
         ctx3.beginPath();
+       
 
         //start(from left), end(from top), start angle, end angle(Math*PI for semi-circle), anticlockwise  
         ctx3.arc(230, 170, 120, 0, 2*Math.PI, false );
         ctx3.strokeStyle="black";
+        ctx3.lineWidth ="3";
         ctx3.stroke();
+        ctx3.fillStyle="yellow";
+        ctx3.fill();
 
         //semi-circle
-        ctx3.moveTo(170, 200);
+        ctx3.beginPath();
         ctx3.arc(230, 200, 60, 0, 1*Math.PI, false);
         ctx3.stroke();
-
+        ctx3.fillStyle="black";
+        ctx3.fill();
+        
         //eyes circle
-        ctx4.moveTo(200, 120);
+        
+        ctx3.beginPath();
+        ctx3.arc(180, 120, 20, 0, 2*Math.PI);
+        ctx3.stroke();
+        ctx3.fillStyle="balck";
+        ctx3.fill();
+        
+        
+        //eyes circle
+        
+        ctx3.beginPath();
+        ctx3.arc(280, 120, 20, 0, 2*Math.PI);
+        ctx3.stroke();
+        ctx3.fillStyle="black";
+        ctx3.fill();
+
+
+
+        //Sad smiley face
+
+        let canvas4 = document.getElementById("c4");
+        let ctx4 = canvas4.getContext("2d");
+
+
+        //outer cicle
+        ctx4.beginPath();
+        ctx4.arc(230, 170, 120, 0, 2*Math.PI, false );
+        ctx4.strokeStyle="black";
+        ctx4.lineWidth ="3";
+        ctx4.stroke();
+        ctx4.fillStyle="yellow";
+        ctx4.fill();
+
+        //eyes (small circle)
+        ctx4.beginPath();
         ctx4.arc(180, 120, 20, 0, 2*Math.PI);
         ctx4.stroke();
-
+        ctx4.fillStyle="black";
+        ctx4.fill();
+        
+        
         //eyes circle
-        ctx4.moveTo(300, 120);
+        ctx4.beginPath();
         ctx4.arc(280, 120, 20, 0, 2*Math.PI);
         ctx4.stroke();
+        ctx4.fillStyle="black";
+        ctx4.fill();
+
+        //semi-circle(Sad face)
+        ctx4.beginPath();
+        ctx4.arc(230, 240, 60, 0, 1*Math.PI, true);
+        ctx4.stroke();
+        ctx4.fillStyle="black";
+        ctx4.fill();
     </script>
 </body>
 </html>
