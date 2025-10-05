@@ -1,0 +1,6 @@
+Hello,
+This folder contains all the folders/files related:
+to projects, practicals written or performed in 
+computer lab of DYPIMCAM.
+
+thank you.
