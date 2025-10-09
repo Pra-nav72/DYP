@@ -4,7 +4,7 @@ class Node:
     """
     def __init__(self, data):
         self.data = data
-        self.next = None  # Pointer to the next node, initialized to None
+        self.next = None  # Pointer to the next node(next is just a variable), initialized to None
 
 class LinkedList:
     """
@@ -42,7 +42,63 @@ class LinkedList:
         last.next = new_node
 
     # ---------------------------------
-    # 2.2. Deletion Method
+    # 2.2. insert Before
+    # ---------------------------------
+
+    def insert_before(self, value, x):
+        new_node = Node(x)
+
+        #case 1: list is empty
+        if self.head is None:
+            print("List is empty!")
+            return
+        
+        #Case 2: value is in first node
+        if self.head.data == value:
+            new_node.next = self.head
+            self.head = new_node
+            return
+        
+        #case 3: traverse to find the value
+        current = self.head
+        prev = None
+        
+        while current and current.data != value:
+            prev = current
+            current = current.next
+        
+        if current is None:
+            print(f"{value} not found!")
+            return
+        new_node.next = current
+        prev.next = new_node
+
+    # ---------------------------------
+    # 2.3. insert after
+    # ---------------------------------
+    def insert_after(self, value, x):
+        new_node = Node(x)
+
+    #     #case 1: List is empty
+        if self.head is None:
+            print("List is empty!")
+            return
+        
+    #     #case 2: if value is at end
+        current = self.head
+        while current and current.data != value:
+            current = current.next
+            
+        
+        if current is None:
+            print(f"{value} not found!")
+            return
+
+        new_node.next = current.next
+        current.next = new_node
+
+    # ---------------------------------
+    # 2.4. Deletion Method
     # ---------------------------------
 
     def delete_node(self, key):
@@ -98,4 +154,19 @@ class LinkedList:
         return self.head is None
     
 
+ll = LinkedList()
+ll.insert_at_beginning(55)
+ll.insert_at_beginning(99)
+ll.insert_at_end("end")
+ll.insert_at_beginning(0)
+ll.insert_at_beginning(None)
+ll.insert_at_end(None)
+ll.insert_at_end(55)
+ll.insert_before("end", "inserting")
+ll.insert_before(55, "inserting Again")
+ll.display()
+ll.delete_node(55)
+ll.insert_after(None, 505)
+ll.insert_after(55, " 55 again")
+ll.display()
 
