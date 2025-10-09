@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drang & Drop</title>
+
+    <style>
+        #dropArea{
+            width: 500px;
+            min-height: 300px;
+            border: 3px dashed blue;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .draggable{
+            width: 250px;
+            height: 150px;
+            margin: 10px;
+            cursor: grab;
+            border: 2px solid palevioletred;
+        }
+    </style>
+</head>
+<body>
+    <h2>Drop Box: </h2><hr>
+    <div id="dropArea" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <!-- Draggable Images -->
+     <img src="WebDev_Assignment/media/tuktuk.jpg" alt="tuktuk" id="img1" class="draggable" draggable="true" ondragstart="drag(event)">
+     <img src="WebDev_Assignment/media/tuktuk.jpg" alt="tuktuk" id="img2" class="draggable" draggable="true" ondragstart="drag(event)">
+     <img src="WebDev_Assignment/media/tuktuk.jpg" alt="tuktuk" id="img3" class="draggable" draggable="true" ondragstart="drag(event)">
+
+    <script>
+        // allow droping
+        function allowDrop(ev){
+            ev.preventDefault();
+        }
+
+        // store id of dragged element 
+        function drag(ev){
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        // drop the dragged item inside drop Area 
+        function drop(ev){
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            var draggedElement = document.getElementById(data);
+            ev.target.appendChild(draggedElement);
+        }
+    </script>
+    </body>
+</html>
