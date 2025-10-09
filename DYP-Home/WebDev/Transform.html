@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform</title>
+    <style>
+        #box{
+            width: 150px;
+            height: 150px;
+            background: yellow;
+            display: flex;
+            /* horizontally */
+            justify-content: center;
+            /* vertically */
+            align-items: center;
+            font-size: 1.5rem;
+
+            /* it specifies which hover property(width/height/background) 
+            The transition will happen.
+            -it can be none, all, or any property you want.  */
+            transition-property: all;
+            transition-duration: 2s;
+        }
+        #box:hover{
+            width: 300px;
+            height: 300px;
+            background: blueviolet;
+        }
+
+        #square{
+            width: 150px;
+            height: 150px;
+            margin-left: 120px;
+            background: purple;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            transition: transform 4s ease;
+
+        }
+        #square:hover{
+            /* to apply both (attributes) we have to use them in a single line. */
+            transform: rotate(45deg) scale(2) skew(20deg, 30deg) translate(150px);
+            /* transform: scale(2); */
+        }
+    </style>
+</head>
+<body>
+    <h2>Transition</h2>
+    <div id="box"><b>BOX</b></div>
+
+    <h2>Transform</h2>
+    <div id="square"><b>BOX</b></div>
+</body>
+</html>
