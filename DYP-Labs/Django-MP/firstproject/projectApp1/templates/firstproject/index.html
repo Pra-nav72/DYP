@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEDIA</title>
+    <style>
+        body {
+            background-color: #161616;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+        .media{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #static_files{
+            width: fit-content;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        a{
+            color: wheat;    
+          
+        }
+    </style>
+</head>
+<body>
+    <div class="media" width="innerwindows.width", min-height="800px" style="border: 3px, dashed blueviolet;">
+        <img src="https://i.pinimg.com/736x/3b/6c/cc/3b6ccc09fdc21beb58ab4002a08725b4.jpg" alt="horse" height="750" style="margin: 10px;">
+        <iframe width="1020" height="600" 
+            src="https://www.youtube.com/embed/8TnHBaw_OZo">
+            <!--  -->
+        </iframe>
+        <div id="static_files">
+            
+            <p style="margin: 5px;"><u>this image loaded through static</u>
+                <img src="{% static 'images/Image Nature.jpg' %}" alt="from static" height="600px" style="margin: 10px;">
+            </p>
+            <a href="https://docs.chaicode.com/youtube/chai-aur-django/welcome/">learn django</a>
+            <!-- <div></div> -->
+        </div>
+    </div>
+    <div>
+        
+    </div>
+</body>
+</html>
