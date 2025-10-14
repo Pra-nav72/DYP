@@ -7,16 +7,50 @@ body {
   color: rgb(0, 0, 0);
 }
 
-header, footer {
+header{
+  display: flex;
+  background: #022843;
+  color: #fff;
+  padding: .3em;
+  text-align: left;
+}
+header img{
+  margin: auto 1em auto auto;
+  border-bottom: white solid 1px;
+  border-right: white solid 1px;
+  border-top: rgba(255, 255, 255, 0) solid 1px;
+  border-left: rgba(255, 255, 255, 0) solid 1px;
+  border-radius: 2px;
+  width: 5em;
+  padding: 2px;
+  transition-property: border border-radius;
+  transition-duration: .6s;
+}
+
+header img:hover{
+  border-bottom: rgba(255, 255, 255, 0) solid 1px;
+  border-right: rgba(255, 255, 255, 0) solid 1px;
+  border-top: white solid 1px;
+  border-left: white solid 1px;
+  
+  box-shadow: white ;
+  border-radius: 2px;
+  border-bottom: 0;
+  border-right: 0;
+  
+}
+
+footer {
   background: #022843;
   color: #fff;
   padding: 1em;
-  text-align: center;
+  text-align: left;
 }
 
 nav ul {
+
   display: flex;
-  justify-content: center;
+  justify-content: right;
   list-style: none;
   background: #444;
   margin: 0;
