@@ -10,7 +10,7 @@ gross_salary = []
 def calculate_gross_salary(basic_salary):
     NetPay = basic_salary + (basic_salary * DA) + (basic_salary * HRA) + (basic_salary * TA)
     gross_pay = NetPay - (basic_salary * PF)
-    return gross_pay
+    return int(gross_pay)
 
 for salary in Basic_salary:
     gross_salary.append(calculate_gross_salary(salary))
