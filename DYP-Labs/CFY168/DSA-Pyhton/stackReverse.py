@@ -28,17 +28,28 @@ class Stack:
 def reverse_string_using_stack(string):
     stack = Stack()
     s1 = []
-
-    #push all charactes
-    for ch in string:
-        stack.push(ch)
-        
-    #pop all characters and store in s1
-    while not stack.is_empty():
-        s1.append(stack.pop())
-    return ''.join(s1)
     
-s = "Pranav"
+
+    if " " in string:
+        s2 = string.split()
+        for word in s2:
+            stack.push(word)
+        #pop all characters and store in s1
+        while not stack.is_empty():
+            s1.append(stack.pop())
+        return ' '.join(s1)
+    else:
+        #push all charactes
+        for ch in string:
+            stack.push(ch)
+        
+        #pop all characters and store in s1
+        while not stack.is_empty():
+            s1.append(stack.pop())
+        return ''.join(s1)
+
+
+s = input("Enter sentence: ")
 s1 = reverse_string_using_stack(s)
 print(f"given string {s}")
 print(f"rversed string: {s1}")

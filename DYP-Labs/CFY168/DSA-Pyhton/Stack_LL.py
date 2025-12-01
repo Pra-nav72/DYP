@@ -33,11 +33,14 @@ class Stack:
     
     
 s = Stack()
+print(s.is_empty())
 
 s.push(34)
 s.push(12)
 s.push(45)
 s.push(4)
+
+print(s.is_empty())
 
 s.display()
 print ('-------------------------------- ')
