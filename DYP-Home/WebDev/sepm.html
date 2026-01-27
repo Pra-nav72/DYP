@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SEPM Diagrams</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f2f0ff;
+        }
+        header {
+            background: linear-gradient(90deg,#4a148c,#6a1b9a,#8e24aa);
+            color: white;
+            padding: 35px;
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            background: #ffffff;
+            padding: 15px;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        nav a {
+            text-decoration: none;
+            color: #4a148c;
+            font-weight: 600;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        nav a:hover { color: #8e24aa; transform: scale(1.1); }
+
+        .section { padding: 50px; max-width: 1200px; margin: auto; }
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            transition: 0.3s;
+        }
+        .card:hover { transform: translateY(-6px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+
+        h2 { color: #4a148c; margin-bottom: 20px; }
+
+        /* Two images side by side on laptop */
+        .image-pair {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .image-box {
+            flex: 1 1 45%;
+            min-width: 280px;
+            background: #faf7ff;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .image-box img { width: 100%; border-radius: 10px; }
+        .image-title { text-align: center; font-weight: 600; margin-top: 8px; color: #6a1b9a; }
+
+        /* Team */
+        .team-box { display: flex; gap: 25px; flex-wrap: wrap; justify-content: center; }
+        .member {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            width: 260px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        .member:hover { transform: scale(1.05); }
+        .member h3 { color: #6a1b9a; }
+
+        html { scroll-behavior: smooth; }
+        footer {
+            background: #4a148c;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav a { font-size: 16px; }
+            header { font-size: 28px; }
+            .image-pair { flex-direction: column; }
+            .image-box { flex: 1 1 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<header>SEPM Diagrams – Complete UML Visualization</header>
+
+<nav>
+    <a href="#usecase">Use Case</a>
+    <a href="#class">Class</a>
+    <a href="#sequence">Sequence</a>
+    <a href="#activity">Activity</a>
+    <a href="#team">Team Members</a>
+</nav>
+
+<!-- USE CASE SECTION -->
+<div class="section" id="usecase">
+    <div class="card">
+        <h2>Use Case Diagram</h2>
+        <p>Shows how users interact with the system.</p>
+
+        <div class="image-pair">
+            <div class="image-box">
+                <img src="Usecase.png" />
+                <div class="image-title">Use Case Diagram</div>
+            </div>
+            <div class="image-box">
+                <img src="UsecaseNotation.png" />
+                <div class="image-title">Use Case Notations</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CLASS DIAGRAM -->
+<div class="section" id="class">
+    <div class="card">
+        <h2>Class Diagram</h2>
+        <p>Shows classes and relationships.</p>
+        <div class="image-pair">
+            <div class="image-box"><img src="Class.png"><div class="image-title">Class Diagram</div></div>
+            <div class="image-box"><img src="ClassNotation.png"><div class="image-title">Class Notations</div></div>
+        </div>
+    </div>
+</div>
+
+<!-- SEQUENCE DIAGRAM -->
+<div class="section" id="sequence">
+    <div class="card">
+        <h2>Sequence Diagram</h2>
+        <p>Shows flow of messages between objects.</p>
+        <div class="image-pair">
+            <div class="image-box"><img src="Sequence.png"><div class="image-title">Sequence Diagram</div></div>
+            <div class="image-box"><img src="SequenceNotation.png"><div class="image-title">Sequence Notations</div></div>
+        </div>
+    </div>
+</div>
+
+<!-- ACTIVITY DIAGRAM -->
+<div class="section" id="activity">
+    <div class="card">
+        <h2>Activity Diagram</h2>
+        <p>Represents workflow and activities.</p>
+        <div class="image-pair">
+            <div class="image-box"><img src="Activity.png"><div class="image-title">Activity Diagram</div></div>
+            <div class="image-box"><img src="ActivityNotation.png"><div class="image-title">Activity Notations</div></div>
+        </div>
+    </div>
+</div>
+
+
+<!-- TEAM SECTION -->
+<div class="section" id="team">
+    <div class="card">
+        <h2>Project Members</h2>
+        <div class="team-box">
+            <div class="member"><h3>Shoheb Ansari</h3><p>Designer & Developer</p></div>
+            <div class="member"><h3>Ankit Raj</h3><p>Researcher</p></div>
+            <div class="member"><h3>Pranav Kumar</h3><p>Documentation</p></div>
+        </div>
+    </div>
+</div>
+
+<footer>© 2025 SEPM Innovative Project | Design and Developed by Shoheb Ansari</footer>
+
+</body>
+</html>
