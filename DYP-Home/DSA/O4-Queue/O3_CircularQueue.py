@@ -69,3 +69,8 @@ c.dequeue()
 
 print("after dequeue:")
 c.display()
+
+print ("enqueue agian")
+c.enqueue(90)
+c.enqueue(900)
+c.display()
